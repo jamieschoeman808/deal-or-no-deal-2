@@ -15,10 +15,11 @@ def GenerateValue(values):
     rndVal = random.choice(values)
     values.remove(rndVal)
     return rndVal
-
-def GetUserBox(boxes):
+userBoxVal = 0
+def GetUserBox(boxes, userBoxVal):
     print(boxes)
     userBox = int(input("Choose your box - Enter a number from 1-15: "))
+    userBoxVal = box_values[userBox]
     while userBox < 1 or userBox > 15:
         print("Invalid option. Please select another box")
         print(boxes)
@@ -63,7 +64,7 @@ for i in box_values:
     box_values[i] = GenerateValue(values)
 
 #print(box_values)
-print("You have chosen box: " + str(GetUserBox(boxes)))
+print("You have chosen box: " + str(GetUserBox(boxes, userBoxVal)))
 while game_running:
     #print(box_values)
     ChooseFive(boxes, box_values)
@@ -86,7 +87,7 @@ while game_running:
         break
     swap = input("Swap(s) or no swap(ns): ")
     if swap == 's':
-        print("Congratulations! You won R" + str(box_values[boxes[0]]))
+        print("Congratulations! You won R" + str(userBoxVal))
         break
     else:
         print("Congratulations! You won R" + str(box_values[14]))
