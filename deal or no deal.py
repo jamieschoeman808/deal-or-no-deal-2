@@ -87,8 +87,8 @@ while game_running:
         break
     swap = input("Swap(s) or no swap(ns): ")
     if swap == 's':
-        print("Congratulations! You won R" + str(userBoxVal))
+        print("Congratulations! You won R" + str(box_values[boxes[0]]))
         break
     else:
-        print("Congratulations! You won R" + str(box_values[14]))
+        print("Congratulations! You won R" + str(userBoxVal))
         break
